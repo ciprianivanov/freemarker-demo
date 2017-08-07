@@ -5,7 +5,9 @@ import com.sandbox.training.utils.FileUtils;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.*;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 public class CSVReader {
 
@@ -38,16 +40,14 @@ public class CSVReader {
         }
 
         for (Map.Entry entry : parameters.entrySet()) {
-            filteredRow.put(entry.getKey(), ((List)entry.getValue()).get(rowNumber));
+            filteredRow.put(entry.getKey(), ((List) entry.getValue()).get(rowNumber));
         }
         return filteredRow;
     }
 
     public Map<String, String> getTestData(String filePath, String filter) throws IOException {
-
         read(filePath);
 
         return getRowWithFilter(filter);
-
     }
 }

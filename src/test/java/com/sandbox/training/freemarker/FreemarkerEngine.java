@@ -47,7 +47,6 @@ public class FreemarkerEngine {
 
         Map<String, String> templateParameters = new HashMap<>();
 
-
         return templateParameters;
     }
 
