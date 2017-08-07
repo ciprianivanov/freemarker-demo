@@ -1,2 +1,3 @@
-name                      ,testDebtor,testCreditor
-credit and debitor present,testDeb   ,testCred
+name                        ,testDebtor,testCreditor
+credit and debitor present  ,testDeb   ,testCred
+credit and debitor different,different ,different

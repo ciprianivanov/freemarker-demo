@@ -7,7 +7,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
-import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class FreemarkerEngineTest {
@@ -17,9 +17,9 @@ public class FreemarkerEngineTest {
     @Test
     public void freemarkerEngineXMLFileTest() throws IOException, TemplateException {
         FreemarkerEngine freemarkerEngine = new FreemarkerEngine("/testdata/freemarker/templates/");
-        Map<String, String> templateParameters = new HashMap<>();
+        Map<String, String> templateParameters;
 
-        templateParameters = csvReader.read("/testdata/freemarker/csv/parameters.csv");
+        templateParameters = csvReader.getTestData("/testdata/freemarker/csv/parameters.csv", "credit and debitor present");
         System.out.println(freemarkerEngine.parseTemplate("pacs.008.001.01", templateParameters));
     }
 
